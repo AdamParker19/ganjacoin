@@ -95,7 +95,7 @@ OBJS= \
     obj/scrypt-x86.o \
     obj/scrypt-x86_64.o 
 
-all: ganjacoind.exe
+all: baisyccoind.exe
 
 LIBS += $(CURDIR)/leveldb/libleveldb.a $(CURDIR)/leveldb/libmemenv.a
 DEFS += -I"$(CURDIR)/leveldb/include"
@@ -115,7 +115,7 @@ obj/%.o: %.cpp $(HEADERS)
 
 ganjacoind.exe: $(OBJS:obj/%=obj/%)
 	$(CXX) $(CFLAGS) $(LDFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS) -lshlwapi
-        $(STRIP) ganjacoind.exe
+        $(STRIP) baisyccoind.exe
 
 obj/scrypt-x86.o: scrypt-x86.S
 	$(CXX) -c $(CFLAGS) -MMD -o $@ $<
@@ -125,7 +125,7 @@ obj/scrypt-x86_64.o: scrypt-x86_64.S
 
 clean:
 	-rm -f obj/*.o
-        -rm -f ganjacoind.exe
+        -rm -f baisyccoind.exe
 	-rm -f obj/build.h
 	cd leveldb && TARGET_OS=OS_WINDOWS_CROSSCOMPILE $(MAKE) clean && cd ..
 
