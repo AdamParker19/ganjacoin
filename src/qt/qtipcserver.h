@@ -2,7 +2,7 @@
 #define QTIPCSERVER_H
 
 // Define ganjacoin-Qt message queue name
-#define BITCOINURI_QUEUE_NAME "ganjacoinURI"
+#define BITCOINURI_QUEUE_NAME "baisyccoinURI"
 
 void ipcScanRelay(int argc, char *argv[]);
 void ipcInit(int argc, char *argv[]);
